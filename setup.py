@@ -19,7 +19,9 @@ class TestCommand(Command):
         t = TextTestRunner(verbosity=1)
         t.run(tests)
 
-
+# python setup.py sdist bdist_wheel
+# pip install twine
+# twine upload dist/*
 setup(
     name='parse_rest',
     version='0.2.20240920',
@@ -41,5 +43,6 @@ setup(
         "Programming Language :: Python :: 2.7",
         "Programming Language :: Python :: 3.3",
         "Programming Language :: Python :: 3.4",
+        "Programming Language :: Python :: 3.12",
     ]
 )
