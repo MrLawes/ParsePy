@@ -136,8 +136,13 @@ class ParseBase(object):
 
         request.get_method = lambda: http_verb
 
+        import ssl
+        context = ssl.create_default_context()
+        context.check_hostname = False
+        context.verify_mode = ssl.CERT_NONE
+
         try:
-            response = urlopen(request, timeout=CONNECTION_TIMEOUT)
+            response = urlopen(request, timeout=CONNECTION_TIMEOUT, context=context)
         except HTTPError as e:
             exc = {
                 400: core.ResourceRequestBadRequest,
