@@ -19,9 +19,15 @@ class TestCommand(Command):
         t = TextTestRunner(verbosity=1)
         t.run(tests)
 
+# vim ~/.pypirc
+# [distutils]index-servers=pypi
+# [pypi]repository = https://upload.pypi.org/legacy/
+# username = __token__
+# password = pypi-xxxxx
 # python setup.py sdist bdist_wheel
 # pip install twine
 # twine upload dist/*
+
 setup(
     name='qs-parse-rest',
     version='0.2.20240920',
