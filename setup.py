@@ -23,7 +23,7 @@ class TestCommand(Command):
 # pip install twine
 # twine upload dist/*
 setup(
-    name='parse_rest',
+    name='qs-parse-rest',
     version='0.2.20240920',
     description='A client library for Parse.com\'.s REST API',
     url='https://github.com/milesrichardson/ParsePy',
